@@ -4,35 +4,35 @@
 
 using namespace std;
 
-const int SizeEnglishAlphabet = 26; //Размер алфавита
+const int SizeEnglishAlphabet = 26; //Р Р°Р·РјРµСЂ Р°Р»С„Р°РІРёС‚Р°
 
 const char LowercaseEnglishLetters[] = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
- 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' }; //массив строчных букв
+ 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' }; //РјР°СЃСЃРёРІ СЃС‚СЂРѕС‡РЅС‹С… Р±СѓРєРІ
 const char UppercaseEnglishLetters[] = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L',
- 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' }; //массив заглавных букв
+ 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' }; //РјР°СЃСЃРёРІ Р·Р°РіР»Р°РІРЅС‹С… Р±СѓРєРІ
 
-//Функция осуществляет сдвиг строки по алфавиту на указанную величину
+//Г”ГіГ­ГЄГ¶ГЁГї Г®Г±ГіГ№ГҐГ±ГІГўГ«ГїГҐГІ Г±Г¤ГўГЁГЈ Г±ГІГ°Г®ГЄГЁ ГЇГ® Г Г«ГґГ ГўГЁГІГі Г­Г  ГіГЄГ Г§Г Г­Г­ГіГѕ ГўГҐГ«ГЁГ·ГЁГ­Гі
 string CodeEnglishLanguage(string& text, const int shift)
 {
-	bool Ok; //Был ли символ определен как буква алфавита и затем зашифрован
-	string output_s(""); //Зашифрованная строка, вначале инициализируется пустой строкой
+	bool Ok; //ГЃГ»Г« Г«ГЁ Г±ГЁГ¬ГўГ®Г« Г®ГЇГ°ГҐГ¤ГҐГ«ГҐГ­ ГЄГ ГЄ ГЎГіГЄГўГ  Г Г«ГґГ ГўГЁГІГ  ГЁ Г§Г ГІГҐГ¬ Г§Г ГёГЁГґГ°Г®ГўГ Г­
+	string output_s(""); //Г‡Г ГёГЁГґГ°Г®ГўГ Г­Г­Г Гї Г±ГІГ°Г®ГЄГ , ГўГ­Г Г·Г Г«ГҐ ГЁГ­ГЁГ¶ГЁГ Г«ГЁГ§ГЁГ°ГіГҐГІГ±Гї ГЇГіГ±ГІГ®Г© Г±ГІГ°Г®ГЄГ®Г©
 	for (unsigned i = 0; i < text.length(); i++)
 	{
 		Ok = false;
 		for (int j = 0; j < SizeEnglishAlphabet; j++)
-		{ //Перебираем все буквы алфавита на поиск соответствия
-			if (text[i] == LowercaseEnglishLetters[j]) //Если символ оказался строчной буквой алфавита
+		{ //ГЏГҐГ°ГҐГЎГЁГ°Г ГҐГ¬ ГўГ±ГҐ ГЎГіГЄГўГ» Г Г«ГґГ ГўГЁГІГ  Г­Г  ГЇГ®ГЁГ±ГЄ Г±Г®Г®ГІГўГҐГІГ±ГІГўГЁГї
+			if (text[i] == LowercaseEnglishLetters[j]) //Г…Г±Г«ГЁ Г±ГЁГ¬ГўГ®Г« Г®ГЄГ Г§Г Г«Г±Гї Г±ГІГ°Г®Г·Г­Г®Г© ГЎГіГЄГўГ®Г© Г Г«ГґГ ГўГЁГІГ 
 			{
-				j += shift; //Сдвигаем букву по алфавиту на указанное значение
-				while (j >= SizeEnglishAlphabet) j -= SizeEnglishAlphabet; //Если значение вышло за диапазон,
-				while (j < 0) j += SizeEnglishAlphabet; //корректируем его
-				output_s += LowercaseEnglishLetters[j]; //Добавляем полученный символ в конец
-														//зашифрованной строки
-				Ok = true; //Символ был благополучно зашифрован и добавлен в строку
-				break; //Перебор для данного символа можно закончить
+				j += shift; //Г‘Г¤ГўГЁГЈГ ГҐГ¬ ГЎГіГЄГўГі ГЇГ® Г Г«ГґГ ГўГЁГІГі Г­Г  ГіГЄГ Г§Г Г­Г­Г®ГҐ Г§Г­Г Г·ГҐГ­ГЁГҐ
+				while (j >= SizeEnglishAlphabet) j -= SizeEnglishAlphabet; //Г…Г±Г«ГЁ Г§Г­Г Г·ГҐГ­ГЁГҐ ГўГ»ГёГ«Г® Г§Г  Г¤ГЁГ ГЇГ Г§Г®Г­,
+				while (j < 0) j += SizeEnglishAlphabet; //ГЄГ®Г°Г°ГҐГЄГІГЁГ°ГіГҐГ¬ ГҐГЈГ®
+				output_s += LowercaseEnglishLetters[j]; //Г„Г®ГЎГ ГўГ«ГїГҐГ¬ ГЇГ®Г«ГіГ·ГҐГ­Г­Г»Г© Г±ГЁГ¬ГўГ®Г« Гў ГЄГ®Г­ГҐГ¶
+														//Г§Г ГёГЁГґГ°Г®ГўГ Г­Г­Г®Г© Г±ГІГ°Г®ГЄГЁ
+				Ok = true; //Г‘ГЁГ¬ГўГ®Г« ГЎГ»Г« ГЎГ«Г ГЈГ®ГЇГ®Г«ГіГ·Г­Г® Г§Г ГёГЁГґГ°Г®ГўГ Г­ ГЁ Г¤Г®ГЎГ ГўГ«ГҐГ­ Гў Г±ГІГ°Г®ГЄГі
+				break; //ГЏГҐГ°ГҐГЎГ®Г° Г¤Г«Гї Г¤Г Г­Г­Г®ГЈГ® Г±ГЁГ¬ГўГ®Г«Г  Г¬Г®Г¦Г­Г® Г§Г ГЄГ®Г­Г·ГЁГІГј
 			}
-			else if (text[i] == UppercaseEnglishLetters[j]) //То же самое, если символ оказался
-															//заглавной буквой алфавита
+			else if (text[i] == UppercaseEnglishLetters[j]) //Г’Г® Г¦ГҐ Г±Г Г¬Г®ГҐ, ГҐГ±Г«ГЁ Г±ГЁГ¬ГўГ®Г« Г®ГЄГ Г§Г Г«Г±Гї
+															//Г§Г ГЈГ«Г ГўГ­Г®Г© ГЎГіГЄГўГ®Г© Г Г«ГґГ ГўГЁГІГ 
 			{
 				j += shift;
 				if (j >= SizeEnglishAlphabet) j -= SizeEnglishAlphabet;
@@ -42,10 +42,10 @@ string CodeEnglishLanguage(string& text, const int shift)
 				break;
 			}
 		}
-		if (!Ok) output_s += text[i]; //Если символ не является буквой алфавита,
-										//записываем его без изменений
+		if (!Ok) output_s += text[i]; //Г…Г±Г«ГЁ Г±ГЁГ¬ГўГ®Г« Г­ГҐ ГїГўГ«ГїГҐГІГ±Гї ГЎГіГЄГўГ®Г© Г Г«ГґГ ГўГЁГІГ ,
+										//Г§Г ГЇГЁГ±Г»ГўГ ГҐГ¬ ГҐГЈГ® ГЎГҐГ§ ГЁГ§Г¬ГҐГ­ГҐГ­ГЁГ©
 	}
-	return output_s; //По окончании возвращаем получившуюся строку
+	return output_s; //ГЏГ® Г®ГЄГ®Г­Г·Г Г­ГЁГЁ ГўГ®Г§ГўГ°Г Г№Г ГҐГ¬ ГЇГ®Г«ГіГ·ГЁГўГёГіГѕГ±Гї Г±ГІГ°Г®ГЄГі
 }
 
 int main()
@@ -54,7 +54,7 @@ int main()
 	cout << "If you want to encrypt string, press 1" << endl;
 	cout << "if you want to decode, press 2" << endl;
 
-	bool Ok = false; //Корректна ли нажатая клавиша
+	bool Ok = false; //ГЉГ®Г°Г°ГҐГЄГІГ­Г  Г«ГЁ Г­Г Г¦Г ГІГ Гї ГЄГ«Г ГўГЁГёГ 
 	string text;
 	int shift;
 	int numberSelectedAction;
@@ -67,33 +67,33 @@ int main()
 			cout << "Input shift: ";
 			cin >> shift;
 			cout << "Input the text to encrypt: " << endl;
-			while (cin >> text) //Шифруем одним и тем же сдвигом по одному слову
+			while (cin >> text) //ГГЁГґГ°ГіГҐГ¬ Г®Г¤Г­ГЁГ¬ ГЁ ГІГҐГ¬ Г¦ГҐ Г±Г¤ГўГЁГЈГ®Г¬ ГЇГ® Г®Г¤Г­Г®Г¬Гі Г±Г«Г®ГўГі
 			{
 				cout << CodeEnglishLanguage(text, shift) << ' ';
-				if (cin.get() == '\n') break; //Заканчиваем по нажатию Enter
+				if (cin.get() == '\n') break; //Г‡Г ГЄГ Г­Г·ГЁГўГ ГҐГ¬ ГЇГ® Г­Г Г¦Г ГІГЁГѕ Enter
 			}
-			Ok = true; //Клавиша была нажата корректно
+			Ok = true; //ГЉГ«Г ГўГЁГёГ  ГЎГ»Г«Г  Г­Г Г¦Г ГІГ  ГЄГ®Г°Г°ГҐГЄГІГ­Г®
 		} break;
 		case '2':
 		{
-			bool Done = false; //Завершен ли процесс дешифровки
+			bool Done = false; //Г‡Г ГўГҐГ°ГёГҐГ­ Г«ГЁ ГЇГ°Г®Г¶ГҐГ±Г± Г¤ГҐГёГЁГґГ°Г®ГўГЄГЁ
 			cout << "Input string to decode: ";
-			getline(cin, text); //Считываем всю дешифруемую строку
+			getline(cin, text); //Г‘Г·ГЁГІГ»ГўГ ГҐГ¬ ГўГ±Гѕ Г¤ГҐГёГЁГґГ°ГіГҐГ¬ГіГѕ Г±ГІГ°Г®ГЄГі
 			//text = "Alhjolyz jhu puayvkbjl huk hzzlzz huf jbyypjbshy avwpj dpao vby chza spiyhyf vm zahukhykz-hspnulk jvualua huk yhunl vm mslepisl xblzapvu afwlz.";
-			for (int i = 0; i < SizeEnglishAlphabet && !Done; i++) //Пробуем разные величины сдвига
-		  //до тех пор, пока не расшифруем или не проверим все возможные его значения
+			for (int i = 0; i < SizeEnglishAlphabet && !Done; i++) //ГЏГ°Г®ГЎГіГҐГ¬ Г°Г Г§Г­Г»ГҐ ГўГҐГ«ГЁГ·ГЁГ­Г» Г±Г¤ГўГЁГЈГ 
+		  //Г¤Г® ГІГҐГµ ГЇГ®Г°, ГЇГ®ГЄГ  Г­ГҐ Г°Г Г±ГёГЁГґГ°ГіГҐГ¬ ГЁГ«ГЁ Г­ГҐ ГЇГ°Г®ГўГҐГ°ГЁГ¬ ГўГ±ГҐ ГўГ®Г§Г¬Г®Г¦Г­Г»ГҐ ГҐГЈГ® Г§Г­Г Г·ГҐГ­ГЁГї
 			{
 				cout << endl << "With shift equal " << i << " we have such string:" << endl;
 				cout << CodeEnglishLanguage(text, i) << endl;
 				cout << "If decoding is done, press 1 " << endl;
 				int find;
 				cin >> find;
-				if (find == '1') Done = true; //Строка дешифрована
+				if (find == '1') Done = true; //Г‘ГІГ°Г®ГЄГ  Г¤ГҐГёГЁГґГ°Г®ГўГ Г­Г 
 			}
-			Ok = true; //Клавиша была нажата корректно
+			Ok = true; //ГЉГ«Г ГўГЁГёГ  ГЎГ»Г«Г  Г­Г Г¦Г ГІГ  ГЄГ®Г°Г°ГҐГЄГІГ­Г®
 		} break;
-		default: std::cout << "Press either 1 or 2!"; //Некорректно нажатая
-	   //клавиша
+		default: std::cout << "Press either 1 or 2!"; //ГЌГҐГЄГ®Г°Г°ГҐГЄГІГ­Г® Г­Г Г¦Г ГІГ Гї
+	   //ГЄГ«Г ГўГЁГёГ 
 		}
 	}
 }
